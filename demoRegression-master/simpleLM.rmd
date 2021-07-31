@@ -34,3 +34,31 @@ predict(simp,new,se.fit=TRUE)
 ```
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
 
+My goal is to find another variable that will improve the model more than expected. In this case I will model the length of the bear based on its chest size and compare the residual standard error and the adjusted r-squared for signs of adding value to the model. I will try to model the length of a bear based on chest size. The adjusted r-squared is .7476 and the standard residual error 5.376.
+
+```{r}
+mychest <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(mychest)
+summary.lm(mychest)
+```
+
+This model is comparing the chest and lenght of the bear. The standard residual error is 4.939 and the adjusted r-squared is .7869. Comparing both models Simp vs. Mychest we can see that the residual standard error has decreased from 5.376 from the Simp model to the new residual standard error from the Mychest model to 4.939. We can also see, that the adjusted r-squared has incresed from the Simp model from .7476 to the Mychest model residual standard error .7869. I think that the Chest is the best variable to compare against the neck. The residual standard error is smaller and the adjusted r-squared is bigger. 
+
+```{r}
+myheadw <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(myheadw)
+summary.lm(myheadw)
+```
+
+The adjusted r-squared for this myheadw model got smaller and the residual standard error has gotten bigger. By comparing myheadw to the original model myneck, we can see that this model does not work because the adjusted r-squared decreased and the residual standard error increased. 
+
+
+
+```{r}
+mychest <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(mychest)
+summary.lm(mychest)
+```
