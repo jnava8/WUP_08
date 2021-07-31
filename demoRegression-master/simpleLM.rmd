@@ -55,10 +55,11 @@ summary.lm(myheadw)
 The adjusted r-squared for this myheadw model got smaller and the residual standard error has gotten bigger. By comparing myheadw to the original model myneck, we can see that this model does not work because the adjusted r-squared decreased and the residual standard error increased. 
 
 
-
 ```{r}
-mychest <- lm(LENGTH~CHEST,data=bears)
-plot(LENGTH~CHEST,data=bears)
-abline(mychest)
-summary.lm(mychest)
+myheadlen <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(myheadlen)
+summary.lm(myheadlen)
 ```
+
+This model Myheadlen has an adjusted r-quared of 0.8434 and the standard residual errror is 4.235. It seems that this model is the best comparison to the original model Mychest, becuase the standard residual error is smaller and the adjusted r-squared is bigger. The differences are greater for this model compare to the original vs the Mychest model. 
